@@ -1,0 +1,35 @@
+body{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: url(../imgs/3.jpg) no-repeat center center;
+	background-size: cover;
+}
+#sence{
+	width: 601px;
+	height: 601px;
+	border: 1px solid #DE7915;
+	background: #fff;
+	margin: 0 auto;
+}
+.b{
+	width:29px;
+	height:29px;
+	background:#fff;
+	border-left:1px solid #B274CB;
+	border-top:1px solid #B274CB;
+	float:left;
+}
+.s{
+	width:29px;
+	height:29px;
+	background:green;
+	border-left:1px solid #B274CB;
+	border-top:1px solid #B274CB;
+	float:left;
+	border-radius: 30px;
+}
+.f{
+	background: red;
+	border-radius: 50%;
+}

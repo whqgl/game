@@ -1,0 +1,40 @@
+﻿//设置头部。编码方式必须和html的编码方式一样
+header("Content-Type: text/html;charset=utf-8");
+链接数据库
+$mysql=new mysqli("localhost","root","","test");
+查询数据库时的编码方式
+$mysql->set_charset("utf-8");
+数据库查询
+$sql="SELECT * FROM login WHERE user='{$zhanghao}'";
+开启查询将结果存在变量
+$res=$mysql->query($sql);
+处理结果集，以fetch_all(MYSQLI_ASSOC),将查询结果转换为数组
+$arr=$res->fetch_all(MYSQLI_ASSOC);
+判断变量是否已配置，配置为false，否者为true
+empty($arr)
+ if(!empty($arr)){
+        if($zhanghao==$arr[0]["user"]){
+             if($pass==$arr[0]["pass"]){
+                 echo "登录成功";
+                 return;
+             }else{
+                 echo "密码错误";
+                 echo "<a href='login.html'>返回</a>";
+                 return ;
+             }
+        }
+     }
+      echo "账号不存在";
+      echo "<a href='login.html'>返回</a><br>";
+注册
+向数据库中插入数据
+$sql="INSERT INTO login (`name`,`age`) VALUES ('{$zhanghao}','{$pass}')";
+开启查询
+
+异步注册
+count() 函数返回匹配指定条件的行数。
+异步添加
+函数返回前一次 MySQL 操作所影响的记录行数。
+$mysql->affected_rows
+插入数据
+$sql="INSERT INTO login (`user`,`pass`) VALUES ('{$user}','{$pass}')";
